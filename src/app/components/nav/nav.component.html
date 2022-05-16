@@ -1,7 +1,7 @@
 <!-- INICIO MENÚ PRINCIPAL -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid container-md">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" [routerLink]="['']">
         <img
             width="30"
             alt="Angular Logo"
@@ -15,29 +15,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorías
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Categoría</a></li>
-              <li><a class="dropdown-item" href="#">Categoría</a></li>
-              <li><a class="dropdown-item" href="#">Categoría</a></li>
-              <li><a class="dropdown-item" href="#">Categoría</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Todas las categorías</a></li>
-            </ul>
+            <a class="nav-link" aria-current="page" [routerLink]="['']" [routerLinkActive]="['active']">Inicio</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Acerca de</a>
+            <a class="nav-link" [routerLink]="['blog']" [routerLinkActive]="['active']">Blog</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Contacto</a>
+            <a class="nav-link" [routerLink]="['acerca']" [routerLinkActive]="['active']">Acerca de</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['contacto']" [routerLinkActive]="['active']">Contacto</a>
           </li>
           
         </ul>

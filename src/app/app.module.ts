@@ -9,6 +9,14 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
+import { ErrorComponent } from './components/error/error.component';
+import { HomeComponent } from './components/home/home.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { AcercaComponent } from './components/acerca/acerca.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { PoliticaDeCookiesComponent } from './components/politica-de-cookies/politica-de-cookies.component';
+import { PoliticaDePrivacidadComponent } from './components/politica-de-privacidad/politica-de-privacidad.component';
+import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +26,15 @@ import { MainComponent } from './components/main/main.component';
     SidebarComponent,
     NavComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    ErrorComponent,
+    HomeComponent,
+    BlogComponent,
+    AcercaComponent,
+    ContactoComponent,
+    PoliticaDeCookiesComponent,
+    PoliticaDePrivacidadComponent,
+    AvisoLegalComponent
   ],
   imports: [
     BrowserModule,
