@@ -17,6 +17,7 @@ import { ErrorComponent } from './components/error/error.component';
 // Array de rutas
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'acerca', component: AcercaComponent},
   {path: 'contacto', component: ContactoComponent},
