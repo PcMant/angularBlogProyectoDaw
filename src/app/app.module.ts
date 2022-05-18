@@ -17,6 +17,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { PoliticaDeCookiesComponent } from './components/politica-de-cookies/politica-de-cookies.component';
 import { PoliticaDePrivacidadComponent } from './components/politica-de-privacidad/politica-de-privacidad.component';
 import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.compon
     ContactoComponent,
     PoliticaDeCookiesComponent,
     PoliticaDePrivacidadComponent,
-    AvisoLegalComponent
+    AvisoLegalComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
