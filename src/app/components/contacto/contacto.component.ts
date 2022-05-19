@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
-  constructor() { }
+  public person: any;
+
+  constructor() {
+    this.person = {
+      nombre: '',
+      email: '',
+      mensaje: ''
+    };
+   }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void{
+    console.log(this.person);
   }
 
 }

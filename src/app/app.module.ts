@@ -20,6 +20,9 @@ import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.compon
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 
+// Importación para poder usar formularios
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
