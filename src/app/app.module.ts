@@ -18,6 +18,7 @@ import { PoliticaDeCookiesComponent } from './components/politica-de-cookies/pol
 import { PoliticaDePrivacidadComponent } from './components/politica-de-privacidad/politica-de-privacidad.component';
 import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SearchComponent } from './components/search/search.component';
     PoliticaDeCookiesComponent,
     PoliticaDePrivacidadComponent,
     AvisoLegalComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
