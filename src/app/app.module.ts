@@ -23,6 +23,9 @@ import { LoginComponent } from './components/login/login.component';
 // Importación para poder usar formularios
 import { FormsModule } from '@angular/forms';
 
+// Modulo necesario para peticiones AJAX
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
