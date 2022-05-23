@@ -1,0 +1,18 @@
+<div class="loading" *ngIf="!articles">
+    Cargando...
+</div>
+
+<div articles id="articles" *ngIf="articles">
+    <article id="article-template" class="border p-2 my-2" *ngFor="let article of articles">
+        <h3><a href="#" class="text-decoration-none text-black">{{article.titulo_article}}</a></h3>
+        <div class="d-flex justify-content-between flex-wrap">
+          <span>Fecha: <span>{{article.date_created_article | amDateFormat: 'DD-MM-YYYY'}}</span></span>
+          <span>Autor: {{article.name_user}} {{article.lastname_user}}</span>
+        </div>
+        <a href="#"><img src="https://via.placeholder.com/1500x500/" class="d-block w-100" alt="..."></a>
+
+        <div class="d-flex justify-content-end">
+          <a href="#">Leer más</a>
+        </div>
+    </article>
+  </div>

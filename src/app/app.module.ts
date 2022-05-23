@@ -25,6 +25,10 @@ import { FormsModule } from '@angular/forms';
 
 // Modulo necesario para peticiones AJAX
 import { HttpClientModule } from '@angular/common/http';
+import { ArticlesComponent } from './components/articles/articles.component';
+
+// Importando el modulo de moments
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -44,13 +48,15 @@ import { HttpClientModule } from '@angular/common/http';
     PoliticaDePrivacidadComponent,
     AvisoLegalComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
