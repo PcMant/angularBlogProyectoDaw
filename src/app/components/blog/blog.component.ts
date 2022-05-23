@@ -25,12 +25,12 @@ export class BlogComponent implements OnInit {
 
     this._articleService.getArticles().subscribe(
       response => {
-        if(response.result){
+        /*if(response.result){
           this.articles = response.result;
-        }console.log(response)
+        }*/console.log(response)
       },
       error => {
-        console.log(error);
+        console.log(`Este es el error: ${error}`);
       }
     );
   }

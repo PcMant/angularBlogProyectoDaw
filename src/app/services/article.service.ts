@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { catchError, Observable } from "rxjs";
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { catchError, Observable, throwError } from "rxjs";
 
 // Service Article
 import { Article } from "../models/article";
@@ -38,12 +38,36 @@ export class ArticleService {
         params = params.append('rel','articles,users,categories');
         params = params.append('type', 'article,user,category');
 
-        return this._http.get(
+        return this._http.get<any>(
             this.url+'relations/articles',
             {headers, params}
             
         ).pipe(
-            catchError(error => error)
+            catchError((error) => { 
+                console.log('Error en ArticleService: ', error);
+
+                return this.herrorHandler(error);
+            })
         );
+    }
+
+    /**
+     * Método para el control de errores
+     * @param error 
+     * @returns error
+     */
+    herrorHandler(error: HttpErrorResponse){
+        if(error instanceof HttpErrorResponse){
+            if(error.error instanceof ErrorEvent){
+                console.log('ERROR DE CLIENTE');
+            }else{
+                console.log('ERROR DE SERVIDOR');
+                console.log(error.status);
+                console.log(error.message);
+            }
+        }else{
+            console.log('OTRO TIPO DE ERROR');
+        }
+        return throwError(error);
     }
 }
