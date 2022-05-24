@@ -30,6 +30,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 // Importando el modulo de moments
 import { MomentModule } from 'ngx-moment';
 import { ArticleComponent } from './components/article/article.component';
+import { ArticleNewComponent } from './components/article-new/article-new.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ArticleComponent } from './components/article/article.component';
     SearchComponent,
     LoginComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticleNewComponent
   ],
   imports: [
     BrowserModule,

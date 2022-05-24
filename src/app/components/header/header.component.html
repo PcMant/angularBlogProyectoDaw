@@ -2,7 +2,7 @@
     <!-- INICIO CABECERA -->
       <header class="col-12">
 
-            <app-slider></app-slider>
+            <app-slider *ngIf="this._router.url == '/home' || this._router.url == '/'"></app-slider>
 
             <!-- pulicidad principal -->
             <hr />
