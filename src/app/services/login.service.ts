@@ -35,12 +35,14 @@ export class LoginService {
 
     params = params.append('login', 'true');
     params = params.append('suffix', 'user');
+    params = params.append('email_user', email_user);
+    params = params.append('password_user', password_user);
 
     return this._http
-      .put<any>(this.url + 'relations/articles', { headers, params })
+      .post<any>(this.url + 'users', { headers, params, observe: "body"})
       .pipe(
         catchError((error) => {
-          console.log('Error en ArticleService: ', error);
+          console.log('Error en LoginService: ', error);
 
           return this.herrorHandler(error);
         })
