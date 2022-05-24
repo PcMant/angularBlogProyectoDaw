@@ -25,7 +25,7 @@ export class LoginService {
     this.Authorization = Global.Authorization;
   }
 
-  login(id_article: number): Observable<any> {
+  login(email_user: string, password_user: string): Observable<any> {
     let headers = new HttpHeaders();
 
     headers = headers.append('Content-Type', 'application/json');
@@ -33,17 +33,11 @@ export class LoginService {
 
     let params = new HttpParams();
 
-    params = params.append(
-      'select',
-      'id_article,titulo_article,imagen_article,contenido_article,meta_article,id_user,foto_user,name_user,lastname_user,id_category,name_category,status_article,date_created_article,date_updated_article'
-    );
-    params = params.append('rel', 'articles,users,categories');
-    params = params.append('type', 'article,user,category');
-    params = params.append('linkTo', 'id_article');
-    params = params.append('equalTo', id_article);
+    params = params.append('login', 'true');
+    params = params.append('suffix', 'user');
 
     return this._http
-      .get<any>(this.url + 'relations/articles', { headers, params })
+      .put<any>(this.url + 'relations/articles', { headers, params })
       .pipe(
         catchError((error) => {
           console.log('Error en ArticleService: ', error);
