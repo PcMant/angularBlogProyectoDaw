@@ -13,6 +13,7 @@ import { PoliticaDePrivacidadComponent } from './components/politica-de-privacid
 import { AvisoLegalComponent } from './components/aviso-legal/aviso-legal.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
+import { ArticleComponent } from './components/article/article.component';
 
 import { ErrorComponent } from './components/error/error.component';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'blog', component: BlogComponent},
+  {path: 'blog/articulo/:id', component: ArticleComponent},
   {path: 'acerca', component: AcercaComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'politica-de-cookies', component: PoliticaDeCookiesComponent},
