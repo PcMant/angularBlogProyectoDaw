@@ -31,9 +31,9 @@
           </li>
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-          <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+        <form class="d-flex" #serarchForm="ngForm" (ngSubmit)="goSearch()" >
+          <input class="form-control me-2" type="search" name="search" [(ngModel)]="searchString" placeholder="Buscar" aria-label="Buscar">
+          <button type="submit" class="btn btn-outline-secondary" type="submit">Buscar</button>
         </form>
       </div>
     </div>

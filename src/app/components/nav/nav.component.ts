@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  public searchString: string = '';
+
+  constructor(
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  goSearch(): void{
+    this._router.navigate(['/search', this.searchString]);
   }
 
 }

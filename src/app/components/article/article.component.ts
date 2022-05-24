@@ -57,12 +57,13 @@ export class ArticleComponent implements OnInit {
       this._articleService.getArticle(id).subscribe(
         response => {
           if(response.result){
-            this.article = response.result;
+            this.article = response.result[0];
           }
-          console.log(response)
+          console.log(response);
         },
         error => {
           console.log(`Este es el error: ${error}`);
+          this._router.navigate(['/error']);
         }
       );
     })

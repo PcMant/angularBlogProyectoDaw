@@ -2,6 +2,10 @@
     Cargando...
 </div>
 
+<div class="loading" *ngIf="articles && articles.length == 0">
+  No hay artículos para mostrar, intentalo más tarde.
+</div>
+
 <div articles id="articles" *ngIf="articles">
     <article id="article-template" class="border p-2 my-2" *ngFor="let article of articles">
         <h3><a href="#" class="text-decoration-none text-black">{{article.titulo_article}}</a></h3>
