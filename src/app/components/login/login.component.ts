@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 // Importación del servicio de articulos para poder usarlo
 import { LoginService } from '../../services/login.service';
@@ -13,10 +15,15 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
 
   public credencials: any[] = [];
+  public invalid: boolean = false;
 
   constructor(
-    private _loginService: LoginService
+    private _loginService: LoginService,
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private fb: FormBuilder
   ) { }
+  
 
   ngOnInit(): void {
 
@@ -27,11 +34,14 @@ export class LoginComponent implements OnInit {
           console.log(this.credencials);
           localStorage.setItem('sesion',JSON.stringify(this.credencials));
         }
-        // console.log(response)
+        // console.log(response);
+        this.invalid = false;
+        this._router.navigate(['/home']);
       },
       error => {
         console.log('Usuario o la contraseña introduccidos son incorrectas.');
         console.log(`Este es el error: ${error}`);
+        this.invalid = true;
       }
     );
 

@@ -2,7 +2,14 @@
 <hr />
 
 <div class="d-flex justify-content-center">
+
     <form class="col-12 col-sm-10 p-3 border">
+
+        <div *ngIf="true" class="alert alert-warning alert-dismissible fade show col-12" role="alert">
+            <strong>¡Aviso!</strong> El usuario o la contraseña son incorrectos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    
 
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>

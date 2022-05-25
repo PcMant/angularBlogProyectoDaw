@@ -21,7 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 
 // Importación para poder usar formularios
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modulo necesario para peticiones AJAX
 import { HttpClientModule } from '@angular/common/http';
@@ -59,6 +59,7 @@ import { ArticleNewComponent } from './components/article-new/article-new.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MomentModule
   ],
