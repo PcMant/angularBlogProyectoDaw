@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  public logueado: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

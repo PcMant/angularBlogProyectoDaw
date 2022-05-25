@@ -33,29 +33,34 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this._loginService.login('juan','12345').subscribe(
-    //   response => {
-    //     if(response.result){
-    //       this.credencials = response.result;
-    //       console.log(this.credencials);
-    //       localStorage.setItem('sesion',JSON.stringify(this.credencials));
-    //     }
-    //     // console.log(response);
-    //     this.invalid = false;
-    //     this._router.navigate(['/home']);
-    //   },
-    //   error => {
-    //     console.log('Usuario o la contraseña introduccidos son incorrectas.');
-    //     console.log(`Este es el error: ${error}`);
-    //     this.invalid = true;
-    //   }
-    // );
+    let sesion: any = localStorage.getItem('sesion');
+    sesion = JSON.parse(sesion);
+
+    console.log(sesion[0].token_user);
+
+    this._loginService.getLoginInfo(sesion[0].token_user).subscribe(
+      response => {
+        // if(response.result){
+        //   this.credencials = response.result;
+        //   console.log(this.credencials);
+        //   localStorage.setItem('sesion',JSON.stringify(this.credencials));
+        // }
+        // console.log(response);
+        this.invalid = false;
+        //this._router.navigate(['/home']);
+      },
+      error => {
+        console.log('Usuario o la contraseña introduccidos son incorrectas.');
+        console.log(`Este es el error: ${error}`);
+        //this.invalid = true;
+      }
+    );
 
   }
 
   onSubmit(): void{
 
-    this._loginService.login(this.cuenta.email,this.cuenta.password).subscribe(
+    this._loginService.postLogin(this.cuenta.email,this.cuenta.password).subscribe(
       response => {
         if(response.result){
           this.credencials = response.result;

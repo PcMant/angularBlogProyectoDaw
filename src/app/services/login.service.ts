@@ -25,7 +25,7 @@ export class LoginService {
     this.Authorization = Global.Authorization;
   }
 
-  login(email_user: string, password_user: string): Observable<any> {
+  postLogin(email_user: string, password_user: string): Observable<any> {
     let headers = new HttpHeaders();
 
     headers = headers.append('Content-Type', 'application/json');
@@ -33,8 +33,6 @@ export class LoginService {
 
     let params = new HttpParams();
 
-    // params = params.append('login', 'true');
-    // params = params.append('suffix', 'user');
     params = params.append('email_user', email_user);
     params = params.append('password_user', password_user);
 
@@ -47,6 +45,32 @@ export class LoginService {
           return this.herrorHandler(error);
         })
       );
+  }
+
+  getLoginInfo(token_user: string): Observable<any>{
+
+    let headers = new HttpHeaders();
+
+        headers = headers.append('Content-Type', 'application/json');
+        headers = headers.append('Authorization', this.Authorization);
+
+        let params = new HttpParams();
+
+        params = params.append('select', '*');
+        params = params.append('linkTo', 'token_user');
+        params = params.append('equalTo', token_user);
+
+        return this._http.get<any>(
+            this.url+'users',
+            {headers, params}
+            
+        ).pipe(
+            catchError((error) => { 
+                console.log('Error en ArticleService: ', error);
+
+                return this.herrorHandler(error);
+            })
+        );
   }
 
   /**
