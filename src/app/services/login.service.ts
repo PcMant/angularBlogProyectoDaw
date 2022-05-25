@@ -33,13 +33,13 @@ export class LoginService {
 
     let params = new HttpParams();
 
-    params = params.append('login', 'true');
-    params = params.append('suffix', 'user');
+    // params = params.append('login', 'true');
+    // params = params.append('suffix', 'user');
     params = params.append('email_user', email_user);
     params = params.append('password_user', password_user);
 
     return this._http
-      .post<any>(this.url + 'users', { headers, params, observe: "body"})
+      .post<any>(this.url + 'user?login=true&suffix=user', { headers, params})
       .pipe(
         catchError((error) => {
           console.log('Error en LoginService: ', error);
