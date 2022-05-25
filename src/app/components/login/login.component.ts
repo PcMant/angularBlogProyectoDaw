@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit {
 
     this._loginService.getLoginInfo(sesion[0].token_user).subscribe(
       response => {
-        // if(response.result){
-        //   this.credencials = response.result;
-        //   console.log(this.credencials);
-        //   localStorage.setItem('sesion',JSON.stringify(this.credencials));
-        // }
-        // console.log(response);
+        if(response.result){
+          this.credencials = response.result;
+          console.log(this.credencials);
+          localStorage.setItem('sesion',JSON.stringify(this.credencials));
+        }
+        console.log(response);
         this.invalid = false;
-        //this._router.navigate(['/home']);
+        this._router.navigate(['/home']);
       },
       error => {
         console.log('Usuario o la contraseña introduccidos son incorrectas.');

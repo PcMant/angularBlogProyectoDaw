@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 // Importación del servicio de articulos para poder usarlo
@@ -38,6 +38,8 @@ export class ArticleComponent implements OnInit {
   };
   
   public url: string = '';
+  
+  @Input() public login: boolean = false;
 
   constructor(
     private _articleService: ArticleService,

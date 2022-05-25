@@ -4,8 +4,14 @@
 
   <app-header></app-header>
   <div class="col-12 d-flex flex-wrap">
-    <app-main class="mt-2 col-12 col-md-8 p-1 p-md-3"></app-main>
-    <app-sidebar class="col-12 col-md-4 p-1 p-md-3"></app-sidebar>
+    <app-main 
+      class="mt-2 col-12 col-md-8 p-1 p-md-3"
+      [logueado] = "logueado"
+    ></app-main>
+    <app-sidebar 
+      class="col-12 col-md-4 p-1 p-md-3"
+      [logueado] = "logueado"
+    ></app-sidebar>
   </div>
   <app-footer></app-footer>
 
