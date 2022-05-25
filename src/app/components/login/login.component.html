@@ -3,26 +3,33 @@
 
 <div class="d-flex justify-content-center">
 
-    <form class="col-12 col-sm-10 p-3 border">
+    <form class="col-12 col-sm-10 p-3 border" #loginForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <div *ngIf="true" class="alert alert-warning alert-dismissible fade show col-12" role="alert">
-            <strong>¡Aviso!</strong> El usuario o la contraseña son incorrectos.
+        <div *ngIf="invalid" class="alert alert-danger alert-dismissible fade show col-12" role="alert">
+            <i class="bi bi-exclamation-triangle-fill h5 me-2"></i>
+             El usuario o la contraseña son incorrectos.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     
 
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" #email="ngModel" [(ngModel)]="cuenta.email" required pattern="[a-zA-Z]+">
+            <small *ngIf="!email.valid && email.touched">
+                El email no es válido
+            </small>
         </div>
 
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="cuenta.password" required>
+            <small *ngIf="!password.valid && password.touched">
+                Debe de rellenar el campo de la contraseña
+            </small>
         </div>
 
         <div class="d-flex justify-content-end">
-            <button class="btn btn-primary">Iniciar sesión</button>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </div>
     </form>
 </div>
