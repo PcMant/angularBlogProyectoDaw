@@ -39,7 +39,7 @@ export class LoginService {
     params = params.append('password_user', password_user);
 
     return this._http
-      .post<any>(this.url + 'user?login=true&suffix=user', { headers, params})
+      .post<any>(this.url + 'users?login=true&suffix=user', { headers, params})
       .pipe(
         catchError((error) => {
           console.log('Error en LoginService: ', error);

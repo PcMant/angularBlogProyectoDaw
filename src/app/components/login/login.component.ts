@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
       response => {
         if(response.result){
           this.credencials = response.result;
+          console.log(this.credencials);
         }
-        console.log(response.result)
+        // console.log(response)
       },
       error => {
         console.log(`Este es el error: ${error}`);
