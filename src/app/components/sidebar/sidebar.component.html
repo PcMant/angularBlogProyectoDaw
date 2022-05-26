@@ -9,8 +9,8 @@
 
   <div class="mb-3" *ngIf="logueado">
     <h3 class="mb-1">Sesión</h3>
-    <div class="mb-1">Hola, Nombre Nombre</div>
-    <button class="btn btn-danger m-1" type="button">Cerrar sesión</button>
+    <div class="mb-1">Hola, {{sesion[0].name_user}} {{sesion[0].lastname_user}}</div>
+    <button class="btn btn-danger m-1" type="button" (click)="cerrarSesion()">Cerrar sesión</button>
     <button class="btn btn-success m-1" type="button">Crear artículo</button>
   </div>
 
