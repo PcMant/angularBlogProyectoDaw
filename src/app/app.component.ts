@@ -16,6 +16,7 @@ export class AppComponent {
   title = 'angularBlogProyectoDaw';
   public logueado: boolean = false;
   public routaArticuloCheck: any =  this._router.url.match(/\/blog\/articulo\/[0-9]+/);
+  public ariculoEdit: any =  this._router.url.match(/^\/blog\/crear\/?.*$/);
   public subscriber: Subscription = new Subscription;
   public sesion: any;
 
@@ -32,44 +33,47 @@ export class AppComponent {
     let sesion: any = localStorage.getItem('sesion');
       sesion = JSON.parse(sesion);
 
-    // Comprobación de vigencia del token de sesión
-    if(sesion != null){
-      if (this.jwtHelper.isTokenExpired(sesion[0].token_user)) {
-        // token expired 
-        console.log('No sesion');
-      } else {
-        // token valid
-        console.log('token ok');
-      }
-    }else{
-      this.logueado = false;
-    }
     // Acciones y comprobaciones relativas a la sesión que saltan por cada cambio de ruta
     this.subscriber = this._router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event) => {
-      console.log(this._router.url);
+      // console.log(this._router.url);
       let sesion: any = localStorage.getItem('sesion');
       sesion = JSON.parse(sesion);
   
       this.routaArticuloCheck =  this._router.url.match(/^\/blog\/articulo\/[0-9]+$/);
+      this.ariculoEdit =  this._router.url.match(/^\/blog\/crear\/?.*$/);
   
       if(sesion != null){
         this._loginService.getLoginInfo(sesion[0].token_user).subscribe(
           response => {
-            this.logueado = true;
+
+            this.ariculoEdit =  this._router.url.match(/^\/blog\/crear\/?.*$/);
+
+            // comprobar vigencia del token
+            if (this.jwtHelper.isTokenExpired(sesion[0].token_user)) {
+              // token expired 
+              this.logueado = false;
+            } else {
+              // token valid
+              this.logueado = true;
+            }
+
             if(this._router.url == '/login123') this._router.navigate(['/home']);
           },
           error => {
             console.log('La sesión ya no es valida y ha sido cerrada.');
             console.log(`Este es el error: ${error}`);
+            localStorage.removeItem('sesion');
             this.logueado = false;
+            if(this._router.url.match(/^\/blog\/crear\/?.*$/) != null) this._router.navigate(['/home']);
           }
         );
       }else{
         this.logueado = false;
+        if(this._router.url.match(/^\/blog\/crear\/?.*$/) != null) this._router.navigate(['/home']);
       }
-      console.log(this.logueado);
+      // console.log(this.logueado);
       this.sesion = sesion;
     });
   }

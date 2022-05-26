@@ -35,7 +35,7 @@ export class SearchComponent implements OnInit {
       this.termino = params['termino'];
       let termino = params['termino'];
 
-      console.log(this._articleService.prueba());
+      // console.log(this._articleService.prueba());
 
       this._articleService.search(termino).subscribe(
         response => {

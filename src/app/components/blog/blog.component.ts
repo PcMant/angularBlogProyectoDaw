@@ -26,14 +26,14 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this._articleService.prueba());
+    // console.log(this._articleService.prueba());
 
     this._articleService.getArticles().subscribe(
       response => {
         if(response.result){
           this.articles = response.result;
         }
-        console.log(response)
+        // console.log(response)
       },
       error => {
         console.log(`Este es el error: ${error}`);

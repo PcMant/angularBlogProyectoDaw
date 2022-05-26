@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
         if(response.result){
           this.articles = response.result;
         }
-        console.log(response)
+        // console.log(response)
       },
       error => {
         console.log(`Este es el error: ${error}`);

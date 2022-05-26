@@ -63,6 +63,11 @@ export class ArticleService {
         );
     }
 
+    /**
+     * Obtener un artículo en concreto por id
+     * @param id_article 
+     * @returns 
+     */
     getArticle(id_article: number):Observable<any>{
 
         let headers = new HttpHeaders();
@@ -91,6 +96,11 @@ export class ArticleService {
         );
     }
 
+    /**
+     * Busqueda de artículo por terminos en los títulos
+     * @param searchString 
+     * @returns 
+     */
     search(searchString: string):Observable<any>{
 
         let headers = new HttpHeaders();
