@@ -1,10 +1,10 @@
 <h1>Modo de edición de artículo</h1>
 <hr />
 
-<form class="col-12 p-3">
+<form class="col-12 p-3" #articleForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="titulo" class="form-label">Título</label>
-    <input type="text" class="form-control" id="titulo" />
+    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="article.titulo_article" required />
   </div>
 
   <div class="mb-3">
@@ -43,6 +43,6 @@
   </div>
 
   <div class="d-flex justify-content-end">
-    <button class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="articleForm">Guardar</button>
   </div>
 </form>
