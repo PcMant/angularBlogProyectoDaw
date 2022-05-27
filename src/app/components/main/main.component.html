@@ -1,8 +1,8 @@
 <!-- INICIO MAIN -->
 <main>
     <div class="d-flex justify-content-end" *ngIf="routaArticuloCheck && logueado">
-        <button class="btn btn-warning me-1 mb-1" type="button">Editar artículo</button>
-        <button class="btn btn-danger mb-1" type="button">Eliminar artículo</button>
+        <button class="btn btn-warning me-1 mb-1" type="button" [routerLink]="['blog/crear/:id']">Editar artículo</button>
+        <!--button (click)="delete(69)" class="btn btn-danger mb-1" type="button">Eliminar artículo</button-->
     </div>
     <router-outlet></router-outlet>
 </main>

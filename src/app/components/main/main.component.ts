@@ -27,8 +27,16 @@ export class MainComponent implements OnInit {
     });
   }
 
-  ngAfterViewChecked(): void{
-    //
+  delete(id: string): void{
+    console.log(id);
+    // this._articleService.delete(id).subscribe(
+    //   response => {
+    //     this._router.navigate(['blog']);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   //En el onDestroy, valido si mi subscriber sigue activo y me desuscribo, si no seguirá activo escuchando cuando navegues a otro componente donde no lo requieras.
