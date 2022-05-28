@@ -33,23 +33,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._loginService.postLogin('juan','1234').subscribe(
-      response => {
-        if(response.result){
-          this.credencials = response.result;
-          console.log(this.credencials);
+    // this._loginService.postLogin('user','pass').subscribe(
+    //   response => {
+    //     if(response.result){
+    //       this.credencials = response.result;
+    //       console.log(this.credencials);
 
-        }
-        console.log(response);
-        //this.invalid = false;
-        //this._router.navigate(['/home']);
-      },
-      error => {
-        console.log('Usuario o la contraseña introduccidos son incorrectas.');
-        console.log(`Este es el error: ${error}`);
-        //this.invalid = true;
-      }
-    );
+    //     }
+    //     console.log(response);
+    //     //this.invalid = false;
+    //     //this._router.navigate(['/home']);
+    //   },
+    //   error => {
+    //     console.log('Usuario o la contraseña introduccidos son incorrectas.');
+    //     console.log(`Este es el error: ${error}`);
+    //     //this.invalid = true;
+    //   }
+    // );
 
   }
 
