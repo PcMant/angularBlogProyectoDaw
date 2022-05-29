@@ -1,4 +1,4 @@
-<h1>Modo de edición de artículo</h1>
+<h1>Modo edición de artículo</h1>
 <hr />
 
 <form class="col-12 p-3" #articleForm="ngForm" (ngSubmit)="onSubmit()">
@@ -7,7 +7,7 @@
     <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="article.titulo_article" required />
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" *ngIf="false">
     <label for="category" class="form-label">Categoría</label>
     <select
       id="category"
@@ -20,7 +20,7 @@
     </select>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" *ngIf="false">
     <label for="exampleFormControlTextarea1" class="form-label"
       >Meta descripción</label
     >
@@ -39,10 +39,17 @@
       class="form-control"
       id="exampleFormControlTextarea1"
       rows="10"
+      name = "contenido"
+      [(ngModel)]="article.contenido_article"
     ></textarea>
   </div>
 
+  <div class="mb-3">
+    <label for="titulo" class="form-label">URL de la imagen</label>
+    <input type="text" class="form-control" id="titulo" name="imagen" [(ngModel)]="article.imagen_article" />
+  </div>
+
   <div class="d-flex justify-content-end">
-    <button type="submit" class="btn btn-primary" [disabled]="articleForm">Guardar</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
   </div>
 </form>

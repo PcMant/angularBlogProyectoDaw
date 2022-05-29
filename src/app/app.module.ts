@@ -31,6 +31,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { MomentModule } from 'ngx-moment';
 import { ArticleComponent } from './components/article/article.component';
 import { ArticleNewComponent } from './components/article-new/article-new.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ArticleNewComponent } from './components/article-new/article-new.compon
     LoginComponent,
     ArticlesComponent,
     ArticleComponent,
-    ArticleNewComponent
+    ArticleNewComponent,
+    ArticleEditComponent
   ],
   imports: [
     BrowserModule,

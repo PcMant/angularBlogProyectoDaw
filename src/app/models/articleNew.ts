@@ -1,4 +1,4 @@
-export class ArticleEdit{
+export class ArticleNew{
 
     constructor(
         public id_article: any,

@@ -15,6 +15,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ArticleNewComponent } from './components/article-new/article-new.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 
 import { ErrorComponent } from './components/error/error.component';
 
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'blog/articulo/:id', component: ArticleComponent},
   {path: 'blog/crear', component: ArticleNewComponent},
-  {path: 'blog/crear/:id', component: ArticleNewComponent},
+  {path: 'blog/crear/:id', component: ArticleEditComponent},
   {path: 'acerca', component: AcercaComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'politica-de-cookies', component: PoliticaDeCookiesComponent},

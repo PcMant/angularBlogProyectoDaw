@@ -5,12 +5,12 @@ import { ArticleNew } from 'src/app/models/articleNew';
 import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
-  selector: 'app-article-new',
-  templateUrl: './article-new.component.html',
-  styleUrls: ['./article-new.component.scss'],
+  selector: 'app-article-edit',
+  templateUrl: '../article-new/article-new.component.html',
+  styleUrls: ['../article-new/article-new.component.scss'],
   providers: [ArticleService]
 })
-export class ArticleNewComponent implements OnInit {
+export class ArticleEditComponent implements OnInit {
 
   public article: ArticleNew;
   public sesion: any = localStorage.getItem('sesion');

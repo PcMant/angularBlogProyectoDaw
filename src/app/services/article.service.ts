@@ -4,6 +4,7 @@ import { catchError, Observable, throwError } from "rxjs";
 
 // Service Article
 import { Article } from "../models/article";
+import { ArticleNew } from "../models/articleNew";
 
 // Configuraciones globales para la API
 import { Global } from "./global";
@@ -118,6 +119,116 @@ export class ArticleService {
 
         return this._http.get<any>(
             this.url+'relations/articles',
+            {headers, params}
+            
+        ).pipe(
+            catchError((error) => { 
+                console.log('Error en ArticleService: ', error);
+
+                return this.herrorHandler(error);
+            })
+        );
+    }
+
+    /**
+     * Método para crear nuevos artículos
+     * @param token_user 
+     * @param id_user_article 
+     * @param titulo_article 
+     * @param imagen_article 
+     * @param contenido_article 
+     * @returns 
+     */
+    create(
+        token_user: string, 
+        id_user_article: number,
+        titulo_article: string,
+        imagen_article: string,
+        contenido_article: string,
+        // id_category_article: number = 1,
+        // status_article: number = 1
+    ):Observable<any>{
+
+        let headers = new HttpHeaders();
+
+        headers = headers.append('Content-Type', 'application/json');
+        headers = headers.append('Authorization', this.Authorization);
+
+        let params = new HttpParams();
+
+        params = params.append('id_user_article', id_user_article);
+        params = params.append('titulo_article', titulo_article);
+        params = params.append('imagen_article', imagen_article);
+        params = params.append('contenido_article', contenido_article);
+        // params = params.append('id_category_article', id_category_article);
+        // params = params.append('status_article', status_article);
+
+        return this._http.post<any>(
+            this.url+`articles?token=${token_user}&framejs=`,
+            {headers, params}
+            
+        ).pipe(
+            catchError((error) => { 
+                console.log('Error en ArticleService: ', error);
+
+                return this.herrorHandler(error);
+            })
+        );
+    }
+
+    update(
+        id_article: string,
+        token_user: string, 
+        id_user_article: number,
+        titulo_article: string,
+        imagen_article: string,
+        contenido_article: string,
+        // id_category_article: number = 1,
+        // status_article: number = 1
+    ):Observable<any>{
+
+        let headers = new HttpHeaders();
+
+        headers = headers.append('Content-Type', 'application/json');
+        headers = headers.append('Authorization', this.Authorization);
+
+        let params = new HttpParams();
+
+        params = params.append('id_user_article', id_user_article);
+        params = params.append('titulo_article', titulo_article);
+        params = params.append('imagen_article', imagen_article);
+        params = params.append('contenido_article', contenido_article);
+        // params = params.append('id_category_article', id_category_article);
+        // params = params.append('status_article', status_article);
+
+        return this._http.put<any>(
+            this.url+`articles?token=${token_user}&id=${id_article}&nameId=id_article&framejs=`,
+            {headers, params}
+            
+        ).pipe(
+            catchError((error) => { 
+                console.log('Error en ArticleService: ', error);
+
+                return this.herrorHandler(error);
+            })
+        );
+    }
+
+    delete(token_user: string, id_article: number):Observable<any>{
+
+        let headers = new HttpHeaders();
+
+        headers = headers.append('Content-Type', 'application/json');
+        headers = headers.append('Authorization', this.Authorization);
+
+        let params = new HttpParams();
+
+        params = params.append('token', token_user);
+        params = params.append('id', id_article);
+        params = params.append('nameId', 'id_article');
+
+        return this._http.delete<any>(
+            this.url+'articles',
             {headers, params}
             
         ).pipe(
