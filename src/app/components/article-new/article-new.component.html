@@ -8,7 +8,7 @@
   </div> -->
 
   <div class="mb-3">
-    <label for="titulo" class="form-label">Título</label>
+    <label for="titulo" class="form-label">Título*</label>
     <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="article.titulo_article" required />
   </div>
 
@@ -38,7 +38,7 @@
 
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label"
-      >Contenido</label
+      >Contenido*</label
     >
     <textarea
       class="form-control"
@@ -46,6 +46,7 @@
       rows="10"
       name = "contenido"
       [(ngModel)]="article.contenido_article"
+      required
     ></textarea>
   </div>
 
@@ -54,7 +55,8 @@
     <input type="text" class="form-control" id="titulo" name="imagen" [(ngModel)]="article.imagen_article" />
   </div>
 
+  <p class="fw-bold">Los campos marcados con (*) son obligatorios.</p>
   <div class="d-flex justify-content-end">
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="articleForm.invalid">Guardar</button>
   </div>
 </form>

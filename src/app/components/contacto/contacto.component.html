@@ -2,60 +2,53 @@
 <hr />
 
 <div class="d-flex justify-content-center">
-  <form
-    class="col-12 col-sm-10 p-3 border"
-    #contactoForm="ngForm" (ngSubmit)="onSubmit()"
-  >
+  <form class="col-12 col-sm-10 p-3 border" #contactoForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input
-        type="name"
-        class="form-control"
-        id="nombre"
-        name="nombre"
-        #nombre="ngModel"
-        [(ngModel)]="person.nombre"
-        required
-        pattern="[a-zA-Z]+"
-      />
+      <label for="nombre" class="form-label">Nombre*</label>
+      <input type="name" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="person.nombre"
+        required pattern="[a-zA-Z]+" />
 
       <small *ngIf="!nombre.valid && nombre.touched">
         El nombre no es válido
       </small>
     </div>
     <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        placeholder="nombre@ejemplo.com"
-        #email="ngModel"
-        [(ngModel)]="person.email"
-        required
-      />
+      <label for="email" class="form-label">Email*</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" #email="ngModel"
+        [(ngModel)]="person.email" required />
 
       <small *ngIf="!email.valid && email.touched">
         El nombre no es válido
       </small>
     </div>
     <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea
-        class="form-control"
-        id="mensaje"
-        name="mensaje"
-        #mensaje="ngModel"
-        [(ngModel)]="person.mensaje"
-        rows="3"
-        required
-      ></textarea>
+      <label for="mensaje" class="form-label">Mensaje*</label>
+      <textarea class="form-control" id="mensaje" name="mensaje" #mensaje="ngModel" [(ngModel)]="person.mensaje"
+        rows="3" required></textarea>
 
       <small *ngIf="!mensaje.valid && mensaje.touched">
         El mensaje no es válido
       </small>
     </div>
-      <button type="submit" class="btn btn-primary col-12" [disabled]="contactoForm.invalid">Enviar</button>
+    <p class="fw-bold">Los campos marcados con (*) son obligatorios.</p>
+    <button type="submit" class="btn btn-primary col-12" [disabled]="contactoForm.invalid">Enviar</button>
   </form>
+
+  <!-- Modal Win-->
+  <div class="modal fade show" id="winModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hola buenas, {{person.nombre}}</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <p>Recibirá un email de respuesta a {{person.email}} tan pronto como sea posible. </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="goHome()" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

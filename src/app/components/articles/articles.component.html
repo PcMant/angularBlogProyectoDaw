@@ -8,7 +8,7 @@
 
 <div articles id="articles" *ngIf="articles">
     <article id="article-template" class="border p-2 my-2" *ngFor="let article of articles">
-        <h3><a href="#" class="text-decoration-none text-black">{{article.titulo_article}}</a></h3>
+        <h3><a [routerLink]="['/blog/articulo',article.id_article]" class="text-decoration-none text-black">{{article.titulo_article}}</a></h3>
         <div class="d-flex justify-content-between flex-wrap">
           <span>Fecha: <span>{{article.date_created_article | amDateFormat: 'DD-MM-YYYY'}}</span></span>
           <span>Autor: {{article.name_user}} {{article.lastname_user}}</span>
@@ -18,7 +18,7 @@
             *ngIf="article.imagen_article == null || !article.imagen_article || article.imagen_article == '' " 
             src="./assets/images/default.jpg" class="d-block w-100" alt="Imagen del articulo: {{article.titulo_article}}"
           />
-          <img *ngIf="article.imagen_article != null" src="{{article.imagen_article}}" class="d-block w-100" alt="Imagen del articulo: {{article.titulo_article}}">
+          <img *ngIf="article.imagen_article != null && article.imagen_article != ''" src="{{article.imagen_article}}" class="d-block w-100" alt="Imagen del articulo: {{article.titulo_article}}">
         </a>
 
         <div class="d-flex justify-content-end">
