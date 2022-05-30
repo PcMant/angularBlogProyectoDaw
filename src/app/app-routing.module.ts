@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'blog/articulo/:id', component: ArticleComponent},
   {path: 'blog/crear', component: ArticleNewComponent},
-  {path: 'blog/crear/:id', component: ArticleEditComponent},
+  {path: 'blog/edit/:id', component: ArticleEditComponent},
   {path: 'acerca', component: AcercaComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'politica-de-cookies', component: PoliticaDeCookiesComponent},

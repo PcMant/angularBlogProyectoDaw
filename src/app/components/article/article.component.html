@@ -1,4 +1,10 @@
-<a href="#"><img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="..."></a>
+<a>
+    <img 
+        *ngIf="article.imagen_article == null || !article.imagen_article || article.imagen_article == '' " 
+        src="./assets/images/default.jpg" class="d-block w-100" alt="Imagen del articulo: {{article.titulo_article}}"
+    />
+    <img *ngIf="article.imagen_article != null" src="{{article.imagen_article}}" class="d-block w-100" alt="Imagen del articulo: {{article.titulo_article}}">
+</a>
 
 <h1>{{article.titulo_article}}</h1>
 <hr />

@@ -15,6 +15,7 @@ export class ArticleNewComponent implements OnInit {
   public article: ArticleNew;
   public sesion: any = localStorage.getItem('sesion');
   public status: string = '';
+  public page_title: string;
   
   constructor(
     private _articleService: ArticleService,
@@ -22,6 +23,7 @@ export class ArticleNewComponent implements OnInit {
   ) {
     this.article = new ArticleNew(null, 1, null, null, null, 1, null, 1);
     this.sesion = JSON.parse(this.sesion);
+    this.page_title = 'Crear artículo';
    }
 
   ngOnInit(): void {
@@ -33,14 +35,14 @@ export class ArticleNewComponent implements OnInit {
       this.sesion[0].token_user,
       this.sesion[0].id_user,
       this.article.titulo_article,
-      this.article.contenido_article,
-      this.article.imagen_article
+      this.article.imagen_article,
+      this.article.contenido_article
     ).subscribe(
       response => {
         if(response.status == '200'){
           this.status = '200';
           this.article = response.article;
-          // console.log(response);
+          console.log(response);
           this._router.navigate(['/blog']);
         }else{
           this.status = 'error';

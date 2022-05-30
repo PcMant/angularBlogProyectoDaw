@@ -1,7 +1,12 @@
-<h1>Modo edición de artículo</h1>
+<h1>{{page_title}}</h1>
 <hr />
 
 <form class="col-12 p-3" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <!-- <div *ngIf="is_edit">
+
+  </div> -->
+
   <div class="mb-3">
     <label for="titulo" class="form-label">Título</label>
     <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="article.titulo_article" required />

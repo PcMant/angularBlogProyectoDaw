@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
 
     this.sesion = JSON.parse(this.sesion);
-    console.log(this.sesion);
+    // console.log(this.sesion);
 
     // Evento que detecta cambios en la ruta
     this.subscriber = this._router.events.pipe(
@@ -49,7 +49,7 @@ export class MainComponent implements OnInit {
     let ruta: any = this._router.url;
     ruta = ruta.split('/');
 
-    this._router.navigate([`/blog/crear/${ruta[3]}`]);
+    this._router.navigate([`/blog/edit/${ruta[3]}`]);
   }
 
   delete(): void{
@@ -59,7 +59,7 @@ export class MainComponent implements OnInit {
 
     this._articleService.delete(this.sesion[0].token_user,Number(ruta[3])).subscribe(
       response => {
-        console.log(response);
+        // console.log(response);
         this._router.navigate(['/blog']);
       },
       error => {

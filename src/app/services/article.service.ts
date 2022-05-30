@@ -214,6 +214,12 @@ export class ArticleService {
         );
     }
 
+    /**
+     * Método que elimina un artículo en concreto
+     * @param token_user 
+     * @param id_article 
+     * @returns 
+     */
     delete(token_user: string, id_article: number):Observable<any>{
 
         let headers = new HttpHeaders();
