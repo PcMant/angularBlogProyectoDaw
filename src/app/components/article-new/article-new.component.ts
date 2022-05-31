@@ -30,7 +30,8 @@ export class ArticleNewComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.article);
+    // console.log(this.article);
+    // Crear artículo nuevo
     this._articleService.create(
       this.sesion[0].token_user,
       this.sesion[0].id_user,
