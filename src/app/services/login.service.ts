@@ -20,11 +20,21 @@ export class LoginService {
   public url: string = '';
   public Authorization: string = '';
 
+  /**
+   * 
+   * @param _http 
+   */
   constructor(private _http: HttpClient) {
     this.url = Global.url;
     this.Authorization = Global.Authorization;
   }
 
+  /**
+   * Login de usuario
+   * @param email_user 
+   * @param password_user 
+   * @returns 
+   */
   postLogin(email_user: string, password_user: string): Observable<any> {
     let headers = new HttpHeaders();
 
@@ -47,6 +57,11 @@ export class LoginService {
       );
   }
 
+  /**
+   * Obtener información de login
+   * @param token_user 
+   * @returns 
+   */
   getLoginInfo(token_user: string): Observable<any>{
 
     let headers = new HttpHeaders();

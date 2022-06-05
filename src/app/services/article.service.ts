@@ -176,6 +176,16 @@ export class ArticleService {
         );
     }
 
+    /**
+     * Actualizar artículo
+     * @param id_article 
+     * @param token_user 
+     * @param id_user_article 
+     * @param titulo_article 
+     * @param imagen_article 
+     * @param contenido_article 
+     * @returns 
+     */
     update(
         id_article: string,
         token_user: string, 
