@@ -12,7 +12,7 @@
 <div class="d-flex justify-content-between flex-wrap mb-3">
     <span>Fecha: <span>{{article.date_created_article | amDateFormat: 'DD-MM-YYYY'}}</span>
     </span>
-    <span>{{article.name_user}} {{article.lastname_user}}</span>
+    <span>Autor: {{article.name_user}} {{article.lastname_user}}</span>
 </div>
 
 <div id="content" [innerHTML]="article.contenido_article">
