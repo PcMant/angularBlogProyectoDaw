@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" #email="ngModel" [(ngModel)]="cuenta.email" required pattern="[a-zA-Z]+">
+            <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" #email="ngModel" [(ngModel)]="cuenta.email" required>
             <small *ngIf="!email.valid && email.touched">
                 El email no es válido
             </small>
