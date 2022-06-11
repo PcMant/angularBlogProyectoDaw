@@ -59,7 +59,7 @@ export class AppComponent {
               this.logueado = true;
             }
 
-            if(this._router.url == '/login123') this._router.navigate(['/home']);
+            if(this._router.url == '/login123' && this.logueado) this._router.navigate(['/home']);
           },
           error => {
             console.log('La sesión ya no es valida y ha sido cerrada.');
