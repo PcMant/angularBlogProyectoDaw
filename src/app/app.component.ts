@@ -54,6 +54,7 @@ export class AppComponent {
             if (this.jwtHelper.isTokenExpired(sesion[0].token_user)) {
               // token expired 
               this.logueado = false;
+              localStorage.removeItem('sesion');
             } else {
               // token valid
               this.logueado = true;
