@@ -43,10 +43,10 @@ export class ArticleService {
         params = params.append('select', 'id_article,titulo_article,imagen_article,contenido_article,meta_article,id_user,foto_user,name_user,lastname_user,id_category,name_category,status_article,date_created_article,date_updated_article');
         params = params.append('rel','articles,users,categories');
         params = params.append('type', 'article,user,category');
+        params = params.append('orderBy', 'date_created_article');
+        params = params.append('orderMode', 'DESC');
 
         if(last != null){
-            params = params.append('orderBy','date_created_article');
-            params = params.append('orderMode','ASC');
             params = params.append('startAt','0');
             params = params.append('endAt','3');
         }
@@ -116,6 +116,8 @@ export class ArticleService {
         params = params.append('type', 'article,user,category');
         params = params.append('linkTo', 'titulo_article');
         params = params.append('search', searchString);
+        params = params.append('orderBy', 'date_created_article');
+        params = params.append('orderMode', 'DESC');
 
         return this._http.get<any>(
             this.url+'relations/articles',
