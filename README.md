@@ -8,7 +8,7 @@ Repositiorio backend: [https://github.com/PcMant/proyectoFinal_blog](https://git
 
 Este frontend con Angular utiliza un API RESTFUL dinámica hecha en PHP con MySQL.
 
-Para más información, consulta los comentarios y la [documentación del proyecto]().
+Para más información, consulta los comentarios y la [documentación del proyecto](https://archive.org/details/memoriasProyectoFinalDAW_JuanMolinaGomez).
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
