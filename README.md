@@ -6,7 +6,7 @@ Demo: [https://angularblogproyectodaw.vercel.app/](https://angularblogproyectoda
 
 Repositiorio backend: [https://github.com/PcMant/proyectoFinal_blog](https://github.com/PcMant/proyectoFinal_blog)
 
-Este frontend con angular utiliza un API RESTFUL dinámica hecha en PHP con MySQL.
+Este frontend con Angular utiliza un API RESTFUL dinámica hecha en PHP con MySQL.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
