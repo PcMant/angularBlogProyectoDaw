@@ -3,6 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 Demo: [https://angularblogproyectodaw.vercel.app/](https://angularblogproyectodaw.vercel.app/)
+
+Repositiorio backend: [https://github.com/PcMant/proyectoFinal_blog](https://github.com/PcMant/proyectoFinal_blog)
+
+Este frontend con angular utiliza un API RESTFUL dinámica hecha en PHP con MySQL.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
