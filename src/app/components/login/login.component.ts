@@ -64,7 +64,8 @@ export class LoginComponent implements OnInit {
         }
         // console.log(response);
         this.invalid = false;
-        this._router.navigate(['/home']);
+        //this._router.navigate(['/home']);
+        location.href ='/home';
       },
       error => {
         console.log('Usuario o la contraseña introduccidos son incorrectas.');
